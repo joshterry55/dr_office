@@ -1,4 +1,5 @@
 class AppointmentsController < ApplicationController
+  before_action :authenticate_user!
   def new
     @appointment = Appointment.new
     @doctors = Doctor.all.map { |d| [d.name, d.id]}
