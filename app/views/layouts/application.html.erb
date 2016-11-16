@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DrOffice</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+
+  <body>
+    <nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="/" class="brand-logo">Ruby City Hospital</a>
+        <ul id="nav-mobile" class="right">
+          <li><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'Patient', patients_path %></li>
+          <li><%= link_to 'Doctor', doctors_path %></li>
+        </ul>
+      </div>
+    </nav>
+    <div class='container'>
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+      <%= yield %>
+    </div>
+    <footer class="page-footer blue darken-4">
+      <div class="footer-copyright blue darken-4">
+        <div class="container center">
+        © 2014 Copyright Text
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

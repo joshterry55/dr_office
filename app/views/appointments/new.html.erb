@@ -1,0 +1,17 @@
+<h1>Create Appointment</h1>
+<hr>
+<%= form_for @appointment do |f| %>
+  <%= f.label :doctor_id %>
+  <%= f.select :doctor_id, options_for_select(@doctors), required: true %><br>
+  <%= f.label :patient_id %>
+  <%= f.select :patient_id, options_for_select(@patients), required: true %><br>
+  <%= f.label :reason %>
+  <%= f.text_field :reason, required: true, placeholder: 'Reason' %>
+  <%= f.label :date %>
+  <%= f.date_field :date, required: true, placeholder: 'Reason' %>
+  <%= f.label :time %>
+  <%= f.select :time, options_for_select(["9 AM", "10 AM","11 AM", "12 PM", "1 PM", "2 PM", "3 PM", "4 PM", "5 PM"]) %><br>
+  <div class='center'>
+    <%= f.submit nil, class: 'btn blue darken-3' %>
+  </div>  
+<% end %>

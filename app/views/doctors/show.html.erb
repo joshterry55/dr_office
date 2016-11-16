@@ -1,0 +1,37 @@
+<h1><%= @doctor.name %></h1>
+<h5 class="center">Specialty: <%= @doctor.specialty %></h5>
+<hr>
+<h3>Appointments:</h3>
+<% if @doctor.appointments.any? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Patient</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Reason</th>
+        <th colspan="2"><th>
+
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @doctor.appointments.each do |a| %>
+        <tr>
+          <td><%= a.patient.name %></td>
+          <td><%= a.date.strftime("%B %e, %Y") %></td>
+          <td><%= a.time %></td>
+          <td><%= a.reason %></td>
+          <td>edit</td>
+          <td><%= link_to 'Remove', appointment_path(a.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <h4 class='center'>No Appointments added! We are glad you are healthy.</h4>
+<% end %>
+<br><br>
+<div class='center'>
+<%= link_to "Add Appointment", new_appointment_path, class: 'btn blue darken-3' %>
+</div>

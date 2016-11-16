@@ -1,0 +1,15 @@
+<div class="row">
+  <%= form_for @doctor do |f| %>
+    <div class="col s6">
+      <%= f.label :name %>
+      <%= f.text_field :name, required: true %>
+    </div>
+    <div class="col s6">
+      <%= f.label :specialty %>
+      <%= f.select :specialty, options_for_select(["Allergist", "Anesthesiologist","Cardiologist", "Dermatologist", "Internal Medicine", "Neurologist", "Family Practice", "Oncologist", "Pediatrician", "Psychiatrist"]) %><br>
+    </div>
+    <div class="col s12 center">
+      <%= f.submit nil, class: 'btn blue darken-3'%>
+    </div>
+  <% end %>
+</div>

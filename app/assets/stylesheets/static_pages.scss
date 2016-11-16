@@ -1,0 +1,40 @@
+body {
+  font-family: GillSans;
+  background-color: lightgray;
+}
+
+h1 {
+  text-shadow: 0px 0px 10px gray;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: darkblue !important;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.flash {
+  height: 20px;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  border-radius: 5px; 
+}
+
+.flash.notice {
+  background-color: green;
+}
+
+.flash.alert {
+  background-color: red;
+}
